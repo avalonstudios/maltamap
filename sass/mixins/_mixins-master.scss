@@ -27,3 +27,28 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+
+@mixin bp( $p, $q: null ) {
+	@if ( $q != null ) {
+		@media (min-width: $p * 1px) and (max-width: $q * 1px) { @content; }
+	} @else {
+		@media (min-width: $p * 1px) { @content; }
+	}
+}
+
+@mixin transit( $el, $time:0.25, $ease:ease-in-out, $delay:0s ) {
+	transition: #{$el} #{$time}s $ease $delay;
+}
+
+@mixin backImage ( $img ) {
+	@include bp( 1, 767 ) {
+		background: url( '../images/#{$img}@0,5x.jpg' );
+	}
+	@include bp( 768, 2559 ) {
+		background: url( '../images/#{$img}@1x.jpg' );
+	}
+	@include bp( 2560 ) {
+		background: url( '../images/#{$img}@2x.jpg' );
+	}
+}

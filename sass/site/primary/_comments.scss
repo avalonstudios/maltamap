@@ -4,3 +4,21 @@
 .bypostauthor {
 	display: block;
 }
+
+.comments-area {
+	padding: 0 $pad15;
+	@include bp(425) {
+		padding: 0;
+		max-width: 80%;
+		@include center-block;
+	}
+	@include bp(1440) {
+		max-width: 95%;
+		margin-left: 0;
+	}
+	.comment-list {
+		@include bp( 1 ) {
+			margin-left: 0;
+		}
+	}
+}

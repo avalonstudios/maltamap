@@ -20,3 +20,145 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.site-content {
+	&.nav-down {
+		//padding-top: 82px;
+	}
+}
+
+.content-area {
+	.blog & {
+		max-width: 1200px;
+		@include center-block;
+		.card-deck {
+			//margin: $pad15 0;
+			.hentry {
+				margin: 0;
+			}
+			.card {
+				overflow: hidden;
+				background: rgba( $white, .55 );
+				.wp-post-image {
+					@include center-block;
+				}
+			}
+		}
+	}
+	.hentry {
+		//margin-top: $pad15;
+	}
+	.card-header {
+		background: $white url('images/pattern.png');
+		.post-thumbnail {
+			max-width: none;
+			display: block;
+				max-height: 205px;
+				overflow: hidden;
+			img {
+				@include center-block;
+			}
+		}
+	}
+	.entry {
+		&-title,
+		&-meta,
+		&-content,
+		&-footer {
+			@include bp(1) {
+				padding: 0 $pad15;
+			}
+			@include bp(425) {
+				padding: 0;
+				max-width: 80%;
+				@include center-block;
+			}
+			@include bp(1440) {
+				max-width: none;
+			//	margin-left: 0;
+			}
+		}
+		&-meta {
+			a {
+				color: $lightyellow;
+			}
+		}
+		&-footer {
+			@include bp(1440) {
+				max-width: 90%;
+			}
+		}
+		&-title {
+			a {
+				color: $lightyellow;
+				&:hover {
+					color: $white;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.front-page-content {
+	max-width: 1200px;
+	@include center-block;
+}
+
+.entry-footer {
+	.cat-links,
+	.tags-links,
+	.edit-link {
+		display: block;
+	}
+}
+
+.post-thumbnail {
+	img {
+		@include center-block;
+	}
+	@include bp(425) {
+		padding: 0;
+		max-width: 80%;
+		@include center-block;
+	}
+	@include bp(1440) {
+		max-width: none;
+		margin-left: 0;
+	}
+}
+
+.page-template-templates-puzzles {
+	.content-area {
+		//max-width: none !important;
+		.entry-title {
+			text-align: center;
+		}
+	}
+}
+
+.site-footer {
+	background-image: url('images/pattern.png');
+	&.fixed {
+		position: fixed;
+		bottom: 0;
+	}
+}
+
+.single-post {
+	.entry {
+		&-meta {
+			@include bp( 1440 ) {
+				@include font-size(.85);
+				text-align: right;
+				margin-right: 3em;
+				font-style: italic;
+			}
+		}
+	}
+	.entry-title {
+		color: $yellow;
+		background: rgba( $black, .9 ) url('images/pattern.png');
+		padding: $pad15;
+	}
+}

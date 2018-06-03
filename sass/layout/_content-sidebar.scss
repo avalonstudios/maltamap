@@ -1,17 +1,33 @@
+@import "../variables-site/variables-site";
+@import "../mixins/mixins-master";
+
+.site-content {
+	max-width: 1200px;
+	@include center-block;
+}
+
 .content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
+	@include bp( 992 ) {
+		float: left;
+		margin: 0 (-$size__site-sidebar) 0 0;
+		width: $size__site-main;
+	}
 }
 
 .site-main {
-	margin: 0 $size__site-sidebar 0 0;
+	@include bp( 992 ) {
+		margin: 0 $size__site-sidebar 0 0;
+		margin-top: $pad30;
+	}
 }
 
 .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
+	@include bp( 992 ) {
+		float: right;
+		overflow: hidden;
+		width: $size__site-sidebar;
+		padding-left: 1em;
+	}
 }
 
 .site-footer {
@@ -19,4 +35,29 @@
 	width: $size__site-main;
 }
 
+
+#secondary {
+	@include bp( 1 ) {
+		max-width: 95%;
+		@include center-block;
+	}
+	@include bp( 992 ) {
+		max-width: 350px;
+	}
+	.card {
+		border-radius: 0;
+	}
+	& > .widget_search {
+		@include bp( 992 ) {
+			margin-top: $pad30;
+		}
+		form {
+			margin: 10px;
+			.search-field {
+				width: 100%;
+				padding: $pad15;
+			}
+		}
+	}
+}
 @import "no-sidebar";

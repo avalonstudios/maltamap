@@ -1,5 +1,11 @@
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	@include bp( 1, 991 ) {
+		margin: 0 0 1.5em 1.5em;
+		padding-left: 1em;
+	}
+	@include bp( 992 ) {
+		margin: 0 0 1.5em 3em;
+	}
 }
 
 ul {

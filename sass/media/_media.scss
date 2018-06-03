@@ -15,8 +15,10 @@ object {
 }
 
 /* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
+.site-branding {
+	.custom-logo-link {
+		display: inline-block;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -28,3 +30,41 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 @import "galleries";
+
+/*--------------------------------------------------------------
+## Puzzles
+--------------------------------------------------------------*/
+@import "puzzles";
+
+div.mejs {
+	&-container {
+		background: $brown !important;
+		.mejs-controls {
+			background: $brown !important;
+		}
+	}
+}
+
+#front-page-carousel {
+	@include bp( 992 ) {
+		/* .carousel-item {
+		} */
+		.carousel {
+			.carousel-inner {
+				height: 400px;
+				.carousel-item {
+					display: block;
+					position: absolute;
+					height: 400px;
+					overflow: hidden;
+					opacity: 0;
+					transition: opacity 2s ease-in-out;
+					&.active {
+						transition: opacity 2s ease-in-out;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

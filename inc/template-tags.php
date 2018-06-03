@@ -43,7 +43,9 @@ if ( ! function_exists( 'maltamap_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'maltamap' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n">' . esc_html( get_the_author() ) . '</a></span>'
+			/*esc_html_x( 'by %s', 'post author', 'maltamap' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'*/
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -59,14 +61,14 @@ if ( ! function_exists( 'maltamap_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'maltamap' ) );
+			$categories_list = get_the_category_list( esc_html__( ' ', 'maltamap' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'maltamap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'maltamap' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'maltamap' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'maltamap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
@@ -134,7 +136,7 @@ if ( ! function_exists( 'maltamap_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
+			the_post_thumbnail( 'Blog_Images', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),

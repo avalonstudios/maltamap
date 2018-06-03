@@ -46,7 +46,11 @@ if ( post_password_required() ) {
 			?>
 		</h2><!-- .comments-title -->
 
+		<hr class="my-2">
+
 		<?php the_comments_navigation(); ?>
+
+		<hr class="my-2">
 
 		<ol class="comment-list">
 			<?php
@@ -57,9 +61,13 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+		<hr class="my-2">
 
+		<?php the_comments_navigation(); ?>
+
+		<hr class="my-2">
+
+		<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>

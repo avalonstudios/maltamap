@@ -1,20 +1,37 @@
+$white: white;
+$black: black;
+
+$maroon: #950208;
+
+$brown: #544132;
+$lightbrown: #73643c;
+$yellow: #b5a245;
+$grey: #5a675e;
+$lightyellow: #e9bf35;
+
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
+$color__link: $lightyellow;
+$color__link-visited: $yellow;
+$color__link-hover: $yellow;
+
+$color__text-main: $brown;
+
+$color__text_color-button: $white;
+$color__text_color-button-hover: $white;
+$color__background-button: $yellow;
+$color__background-button-hover: $lightyellow;
+$color__border-button: $yellow;
+$color__border-button-hover: $lightyellow;
+$color__border-button-focus: $lightyellow;
+
 $color__border-input: #ccc;
 $color__border-abbr: #666;

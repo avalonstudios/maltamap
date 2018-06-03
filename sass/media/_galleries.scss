@@ -11,11 +11,31 @@
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
 		.gallery-columns-#{$i} & {
-			max-width: map-get( $columns, $i );
+			//max-width: map-get( $columns, $i );
 		}
 	}
 }
 
 .gallery-caption {
 	display: block;
+}
+
+.entry-content {
+	.card-columns {
+		@include bp( 1 ) {
+			column-count: 1;
+		}
+		@include bp( 425 ) {
+			column-count: 2;
+		}
+		@include bp( 768 ) {
+			column-count: 3;
+		}
+		@include bp( 1200 ) {
+			column-count: 4;
+		}
+		.card {
+			margin-right: 10px;
+		}
+	}
 }

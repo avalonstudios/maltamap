@@ -90,8 +90,32 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 1.5em 0;
+		padding: 1.5em 0;
 		overflow: hidden;
+		@include bp( 1, 424 ) {
+			padding: 0 $pad15;
+		}
+		@include bp( 425 ) {
+			max-width: 80%;
+			@include center-block;
+		}
+		@include bp( 1440 ) {
+			max-width: 95%;
+			@include center-block;
+		}
+	}
+
+	.blog & {
+		border-top: 1px solid $yellow;
+		border-bottom: 1px solid $yellow;
+	}
+
+	.nav-links {
+		padding: 0 2em;
+		a {
+			padding: 1em;
+		}
 	}
 
 	.nav-previous {
@@ -103,5 +127,102 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+
+.navbar {
+	background: $maroon url('images/pattern.png');
+	z-index: 9998;
+	opacity: 1;
+	@include transit( opacity );
+	.navbar-header {
+		width: 100%;
+		.navbar-btn {
+			float: right;
+			padding: 15px 0 15px 18px;
+			background: transparent;
+			border: 0;
+			.fas {
+				@include font-size(2);
+				color: $white;
+			}
+		}
+	}
+}
+
+.modal-open {
+	.modal {
+		padding-top: 2em;
+	}
+	.navbar {
+		opacity: 0;
+	}
+}
+.modal-dialog {
+	nav {
+		padding-top: 5em;
+	}
+	margin: 0 auto;
+	width: 100%;
+	max-width: 768px;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	pointer-events: unset;
+	nav > ul {
+		padding-bottom: 3em;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 1em;
+		li {
+			margin: 5px 0;
+			@include bp( 1, 425 ) {
+				max-width: 180px;
+				@include transit(max-width);
+			}
+			@include bp( 426, 1024 ) {
+				max-width: 280px;
+				@include transit(max-width);
+			}
+			@include bp( 1025 ) {
+				max-width: 350px;
+				@include transit(max-width);
+			}
+			a {
+				padding: 10px;
+				display: block;
+				text-transform: uppercase;
+				background: rgba( $grey, .1 ) url('images/pattern.png');
+				&:hover {
+					background: rgba( $grey, .7 ) url('images/pattern.png');
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.sub-menu {
+	&.dropdown-menu {
+		background: transparent;
+		&.show {
+			left: 100% !important;
+		}
+	}
+}
+
+.modal-fullscreen-menu {
+	.close {
+		background: $lightyellow;
+		position: fixed;
+		z-index: 9999;
+		bottom: 0;
+		right: 0;
+		color: $white;
+		padding: 1em;
+		display: inline-block;
+		text-shadow: none;
 	}
 }
